@@ -1,0 +1,112 @@
+\documentclass[11pt,twocolumn,spanish]{article}
+\usepackage{graphicx}
+
+\usepackage{babel}
+\usepackage[left=2cm,top=1cm,right=2cm,nohead]{geometry}
+\usepackage{cite}
+
+\title{Lenguaje Arduino\\Instituto Tecnologico de Costa Rica}
+\author{Daniel Alvarado (),Andre Solis Barrantes(2013389035) {\upshape and} Karen Lepiz Chacon(2013005341) \\ Ingenieria en Computacion
+    \\Compiladores e Interpretes
+    \\Profesor: Esteban Arias Mendez
+    \\Sede: Cartago
+    \\Semestre II}
+
+
+
+\begin{document}
+
+\begin{figure*}[t]
+\centerline{\includegraphics[width=10cm]{tec.PNG}}
+\label{fig:videocomparison}
+\end{figure*}
+
+
+
+\begin{figure*}[t]
+\centerline{\includegraphics[width=3cm]{arduino.png}}
+\end{figure*}
+\maketitle
+
+
+
+
+\begin{abstract}
+This document will inform you of the tools used to create a compiler for the Arduino language. Where the grammar will be translated into Spanish and will present slight changes, these will be presented later. Also, this content the grammar BNF used, as well as examples of the functionality of the new version of grammar of the language.
+It will detail the tools that were used for the execution of the project, and will show important definitions that the reader should handle for a correct understanding of the work
+\end{abstract}
+
+\section{Introduccion}
+En este proyecto se quiere crear un compilador en donde se tiene como una base la gramática en el que se quiere trabajar, que, en este caso, corresponde a la gramática de Arduino. La gramática del lenguaje de programación Arduino será traducida al español, en donde no solo se le va a realizar el parser, scanner, sino también va a ser capaz de manejar errores léxicos, sintácticos y semánticos. 
+Se va a presentar el diseño del lenguaje traducido al español, el alfabeto y delimitadores que se utilizaron, así como la explicación de las causas de los errores léxicos, sintácticos y semánticos que se pueden presentar en el lenguaje, y también la manera en el que el programa se recupera del mismo.
+\section{Descripcion del Lenguaje Arduino}
+Es una plataforma electronica abierta en la que se basa en prototipos en software y hardware libre, que son muy sencillos de entender e implementar, la cual fue creada por Arduino LLC.
+Esta diseñada para introducir la programacion a artista y nuevas personas que no estan familiarizadas con el desarrollo del software. El lenguaje es capaz de soportar los lenguajes C y C++. 
+
+Caracteristicas
+ - Libreria Wirin para entradas y salidas.
+ - Basados en dos partes Setup y Loop.
+ - Es codigo libre. 
+ - Tipo Compilado. 
+ - Es compatible con los sistema operativos : Linux,Windows
+\section{Diseno}
+- La base para la gramatica que se va a utilizar en el proyecto sera la gramatica original del Lenguaje
+
+- La nueva gramatica sera  traducida en el idioma español, es decir para escribir un While se pondra MIENTRAS. 
+
+- Las operaciones de decremento(--) e incremento(++), originalmente se escribiria variable++ o variable-- , pero en la nueva gramatica sera: ++variable y --variable. La razon de este cambio es que es mas facil de analizar semanticamente. 
+
+- Las funciones principales Loop() y Setup() no se podrán reespcribir como se puede hacer en la gramatica original, esto con el motivo de que sean funcione ya predeterminadas del lenguaje. 
+
+** gramatica BNF **
+\section{Herramientas Usadas}
+Las herramientas que se van a usar para la generacion del parser y scanner seran JFlex y Cup. Las razones por las que se eligieron estas herramientas se presentara a continuacion:
+
+         JFlex
+        
+                    - Permite generar analizadores de manera rapida.
+                    
+                    - La sintaxis es fácil de comprender e implementar.
+                    
+                    - Es independiente de la plataforma. 
+                    
+                    - Integracion con Cup.
+                    
+                
+        Cup
+        
+                    - Declaracion de simbolos no terminales y terminales.
+                    
+                    - Declaracion d precedencias. 
+                    
+                    - Se define un simbolo inicial de la gramatica.
+                    
+                    - Definción de relgas de produccion. 
+
+La instalacion de estas herramientas son bastante sencillas, basta con descargar el .zip de JFlex que esta presente en la pagina oficial, e importar esas librerias al proyecto de Netbeans (en este caso), y ya se podra compilar archivos .flex y .cup. 
+
+\section{Conclusiones y Obesarvaciones}
+El desarrollo de un compilador para un lenguaje es una tarea bastante tediosa, ya que todo depende del buen diseño de la gramática. Si la gramática no está bien construida o diseñada, ya sea por errores e ambigüedad o por escritura, el resto del proceso puede resultar defectuoso o incluso se tenga que volver a crear. Se tiene que tener bien claro la manera en la que se quiere que el lenguaje funcione y como interpretar las sentencias que se escriban en el mismo.  
+
+La buena comprension sobre el funcionamiento de un compilador, asi como la tarea que realiza cada parte, así como comprender la manera en la que funciona el lenguaje en el que se va a trabajar, ya sea de manera sintáctica y de manera semántica. Entender el lenguaje facilitara ligeramente la construcción de la gramática que se desea usar para el compilador.  
+
+Algunas de las observaciones presentes durante la elaboración del proyecto se encuentran las siguientes:
+
+        -	Las herramientas que se elijan utilizar puede afectar de manera positiva o negativa en el proyecto, en este caso se utilizaron JFlex para el scanner y Cup para el parser, las razones por las cuales se eligieron se encuentran en la sección de Justificación de este mismo documento. 
+        
+        -	Encontrar información sobre como realizar los analizadores y entender la manera que funciona, para poder crear nuestra propia lógica fue difícil, afectando la dificultad de la creación del compilador. 
+        
+        -	El lenguaje Arduino en particular, se tuvo que crear una propia gramatica en BNF, puesto que no estaba publicada de manera pública en ningún repositorio (git) o en la página oficial del lenguaje
+
+
+
+\begin{thebibliography}{5}
+\bibitem{autor1} Capitulo 5.Analsis Semántico. (s.f.). Recuperado el 23 de Noviembre de 2016, de http://arantxa.ii.uam.es/~alfonsec/docs/compila5.htm.
+
+\bibitem{autor2} Castro, R. A. (Octubre de 2008). Integracion de JFlex y Cup. Recuperado el 23 de Noviembre de 2016, de http://www.rafaelvega.info/wp-content/uploads/Articulo.pdf
+\bibitem{autor3}Definicion:Arduino. (5 de octubre de 2012). Recuperado el 23 de Noviembre de 2016, de Arduino: http://jamangandi2012.blogspot.com/2012/10/que-es-arduino-te-lo-mostramos-en-un.html
+\bibitem{autor4}Vigilante. (10 de Diciembre de 2007). Analizador léxico, sintáctico y semántico con JFlex y CUP. Recuperado el 23 de Noviembre de 2016, de CRySOL: http://crysol.org/es/node/819
+
+\end{thebibliography}
+
+\end{document}

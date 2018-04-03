@@ -1,0 +1,182 @@
+------------------ Pruebas con ejecucion correctamente ---------------------------
+
+--------------------------------------------------
+--------- Prueba 1. 
+--------------------------------------------------
+VACIO PREPARACION() {
+	ENTERO b;
+	ENTERO a=5;
+	ENTERO c;
+}
+VACIO CICLO() {
+	b=3;
+	
+	a+=3;
+	c=a*b;
+	IMPRIMIR(a);
+        IMPRIMIR(c);
+	SI(b>2) {
+		IMPRIMIR(b);
+	}
+        b--;
+	c/=4;
+        IMPRIMIR(b);
+        IMPRIMIR(c);
+	
+}
+
+--------------------------------------------------
+--------- Prueba 2. 
+--------------------------------------------------
+VACIO PREPARACION() {
+	ENTERO b;
+}
+VACIO CICLO() {
+	b=3;
+	
+	SI(b>2) {
+		IMPRIMIR(b);
+	}
+       
+	
+}
+VACIO ignore()
+--------------------------------------------------
+--------- Prueba 3. 
+--------------------------------------------------
+VACIO PREPARACION() {
+	ENTERO b;
+}
+VACIO CICLO() {
+	b=3;
+	IMPRIMIR(b);
+        b=3+2;
+	IMPRIMIR(b);
+        b=3*2;
+	IMPRIMIR(b);
+        b=6/2;
+	IMPRIMIR(b);
+	b+=1;
+	IMPRIMIR(b);
+       
+	
+}
+VACIO ignore()
+--------------------------------------------------
+--------- Prueba 4. 
+--------------------------------------------------
+VACIO PREPARACION() {
+	ENTERO b;
+}
+VACIO CICLO() {
+	b=3;
+	IMPRIMIR(b);
+        b-=2;
+	IMPRIMIR(b);
+        b*=2;
+	IMPRIMIR(b);
+        b/=2;
+	IMPRIMIR(b);
+	b+=1;
+	IMPRIMIR(b);
+       
+	
+}
+VACIO ignore()
+--------------------------------------------------
+--------- Prueba 5. 
+--------------------------------------------------
+VACIO PREPARACION() {
+	ENTERO b;
+}
+VACIO CICLO() {
+	b=3;
+	
+	SI(b!=2) {
+		IMPRIMIR(b);
+	}
+       
+	
+}
+VACIO ignore()
+
+------------------ Pruebas con errores ---------------------------
+
+--------------------------------------------------
+--------- Prueba 6. 
+--------------------------------------------------
+VACIO PREPARACION() {
+	ENTERO b;
+}
+VACIO CICLO() {
+	b=3;
+	
+	SI(b<2) 
+		IMPRIMIR(b);
+	}
+       
+	
+}
+VACIO ignore()
+
+--------------------------------------------------
+--------- Prueba 7. 
+--------------------------------------------------
+VACIO PREPARACION() {
+	ENTERO b
+}
+VACIO CICLO() {
+	b=3;
+	
+	SI(b<2){
+		IMPRIMIR(b);
+	}    
+	
+}
+VACIO ignore()
+
+--------------------------------------------------
+--------- Prueba 8. 
+--------------------------------------------------
+VACIO PREPARACION() {
+	INT b
+}
+VACIO CICLO() {
+	b=3;
+	
+	SI(b<2){
+		IMPRIMIR(b);
+	}    
+	
+}
+VACIO ignore()
+--------------------------------------------------
+--------- Prueba 9. 
+--------------------------------------------------
+VACIO PREPARACION() {
+	ENTERO b
+}
+VACIO CICLO() {
+	b 3;
+	
+	SI(b<2){
+		IMPRIMIR(b);
+	}    
+	
+}
+VACIO ignore()
+--------------------------------------------------
+--------- Prueba 10. 
+--------------------------------------------------
+VACIO PREPARACION( {
+	ENTERO b
+}
+VACIO CICLO() {
+	b=3;
+	
+	SI(b<2){
+		IMPRIMIR(b);
+	}    
+	
+}
+VACIO ignore()
